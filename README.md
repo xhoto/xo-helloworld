@@ -1,5 +1,5 @@
 # Introduction 
-Sample code for gRPC, protobuf, gateway, go project stucture, azure-pipeline
+Sample code for gRPC, protobuf, gateway, go project stucture, azure-pipeline, private repo
 
 # Prerequisites
 ## 1. Use SSH key (no passphrase) for access azure repo [Use SSH key authentication](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops)
