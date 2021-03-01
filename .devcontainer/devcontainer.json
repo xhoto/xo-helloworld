@@ -1,0 +1,40 @@
+{
+	"name": "Go",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "1.15",
+			"INSTALL_NODE": "false",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+
+	"runArgs": [ 
+		"--cap-add=SYS_PTRACE", 
+		"--security-opt", 
+		"seccomp=unconfined",
+		"--env-file=.devcontainer/devcontainer.env" 
+	],
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+	],
+
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.useGoProxyToCheckForToolUpdates": false,
+		"go.useLanguageServer": true,
+		"go.gopath": "/go",
+		"go.goroot": "/usr/local/go",
+		"go.toolsGopath": "/go/bin"
+	},
+
+	"extensions": [
+		"golang.Go"
+	],
+
+	"forwardPorts": [8080, 9090],
+
+	"postCreateCommand": "export PATH=$PATH:$GO_PATH/bin",
+
+	"remoteUser": "vscode"
+}
