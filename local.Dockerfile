@@ -18,7 +18,6 @@ RUN echo $ssh_prv_key > /root/.ssh/id_rsa && \
     echo $ssh_authorized_keys > /root/.ssh/authorized_keys && \
     chmod 600 /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa.pub
-    # ssh-keyscan dev.azure.com > /root/.ssh/known_hosts
 RUN git config --global url."git@ssh.dev.azure.com:v3".insteadOf https://dev.azure.com
 RUN git config --global url."ssh://git@github.com".insteadOf https://github.com
 RUN go env -w GOPRIVATE=github.com/xhoto/*
