@@ -3,7 +3,6 @@ ARG ssh_prv_key
 ARG ssh_pub_key
 ARG ssh_known_hosts
 ARG ssh_authorized_keys
-
 WORKDIR /app/
 COPY greeting/ /app/greeting/
 COPY cmd/xo-helloworld-server/main.go /app/xo-helloworld-server/main.go
