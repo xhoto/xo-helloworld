@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-dev-xo-helloworld
+spec:
+  acme:
+    email: xhoto.choi@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-secret-dev-xo-helloworld
+    solvers:
+    - http01:
+        ingress:
+            class: azure/application-gateway

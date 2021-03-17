@@ -1,0 +1,39 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: xo-helloworld
+  labels:
+    app: xo-helloworld 
+spec:  
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xo-helloworld
+  template:
+    metadata:
+      labels:
+        app: xo-helloworld 
+    spec:
+      containers:
+        - name: xo-helloworld 
+          image: acrxo.azurecr.io/xo-helloworld:$(Build.BuildId)
+          ports:
+          - containerPort: 8080
+            name: xo-rest
+          - containerPort: 9090
+            name: xo-grpc
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"
