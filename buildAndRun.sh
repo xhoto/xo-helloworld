@@ -1,6 +1,6 @@
 # Use public repos
 docker build -t xo-helloworld-server . -f Dockerfile
-docker run -p 49090:49090 -p 8080:8080 xo-helloworld-server
+docker run -p 9090:9090 -p 8080:8080 xo-helloworld-server
 
 # Use private repos
 # ssh_prv_key=`cat ~/.ssh/id_rsa`

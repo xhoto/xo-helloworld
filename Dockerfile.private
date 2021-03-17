@@ -31,4 +31,5 @@ FROM alpine
 COPY --from=builder /app/cmd/xo-helloworld-server /xo-helloworld-server
 COPY --from=builder /app/cmd/xo-helloworld-rest /xo-helloworld-rest
 ENTRYPOINT ["/bin/sh", "-c" , "/xo-helloworld-server & /xo-helloworld-rest"]
-EXPOSE 49090
+EXPOSE 8080
+EXPOSE 9090

@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	address     = ":49090"
+	address     = ":9090"
 	defaultName = "world"
 )
 

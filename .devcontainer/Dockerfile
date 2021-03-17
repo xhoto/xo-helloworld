@@ -13,4 +13,4 @@ RUN go env -w GOSUMDB=off
 RUN go env -w GOPROXY=direct
 
 EXPOSE 8080
-EXPOSE 49090
+EXPOSE 9090

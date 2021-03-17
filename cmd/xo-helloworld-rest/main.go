@@ -14,7 +14,7 @@ import (
 var (
 	// command-line options:
 	// gRPC server endpoint
-	grpcServerEndpoint = flag.String("grpc-server-endpoint", ":49090", "gRPC server endpoint")
+	grpcServerEndpoint = flag.String("grpc-server-endpoint", ":9090", "gRPC server endpoint")
 )
 
 func run() error {
